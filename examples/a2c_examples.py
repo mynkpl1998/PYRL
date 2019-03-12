@@ -20,9 +20,9 @@ exp_args = ReadExpConfig(args.config_file)
 
 dtype = torch.float64
 torch.set_default_dtype(dtype)
-device = torch.device("cuda", index=args.gpu_index) if torch.cuda.is_available() else torch.device("cpu")
+device = torch.device("cuda", index=exp_args["config"]["gpu-index"]) if torch.cuda.is_available() else torch.device("cpu")
 if torch.cuda.is_available():
-	torch.cuda.set_device(args.gpu_index)
+	torch.cuda.set_device(exp_args["config"]["gpu-index"])
 
 """ environment """
 env = gym.make(exp_args["config"]["env-name"])
