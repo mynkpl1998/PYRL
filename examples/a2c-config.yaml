@@ -1,0 +1,19 @@
+config:
+  env-name: "CartPole-v0"
+  render: True
+  log-std: -1.0 #log std for the policy
+  gamma: 0.99
+  tau: 0.95  # GAE lambda
+  l2-reg: 0.001 # l2-regularization regression
+  num-threads: 2
+  lr: 0.01
+  seed: 1 # random seed
+  min-batch-size: 2048 # batch size for A2C Update
+  max-iter-num: 500 # maximal number of main iterations
+  log-interval: 1 # interval between training status logs
+  save-model-interval: 1 # interval between saving model (default: 0, means don't save)
+  gpu-index: 0
+  horizon: 10000
+model:
+  activation: 'relu' # tanh / relu / sigmoid
+  hidden: [128, 256]
